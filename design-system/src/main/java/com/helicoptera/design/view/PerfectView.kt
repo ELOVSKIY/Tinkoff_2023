@@ -100,6 +100,25 @@ class PerfectView @JvmOverloads constructor(
 
         //end region
 
+        //region additionalButton
+        val additionalButtonText = typedArray.getString(R.styleable.PerfectView_additionalButtonText)
+        val additionalButton = layout.findViewById(R.id.additional_button) as TextView
+
+        if (!additionalButtonText.isNullOrBlank()) {
+            subHeaderView.isVisible = false
+            icon.isVisible = false
+            crossContainer.isVisible = false
+            additionalButton.isVisible = true
+            additionalButton.setText(additionalButtonText)
+        } else {
+//            subHeaderView.isVisible = true
+//            icon.isVisible = true
+//            crossContainer.isVisible = isClosable
+            additionalButton.isVisible = false
+        }
+
+        //end region
+
         typedArray.recycle()
     }
 
