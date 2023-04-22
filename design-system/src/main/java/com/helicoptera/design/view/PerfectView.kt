@@ -1,8 +1,9 @@
 package com.helicoptera.design.view
 
-import android.R.layout
 import android.content.Context
+import android.content.res.ColorStateList
 import android.content.res.TypedArray
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
 import com.helicoptera.design.R
+import com.helicoptera.design.ext.toPx
 
 
 class PerfectView @JvmOverloads constructor(
@@ -23,27 +25,31 @@ class PerfectView @JvmOverloads constructor(
 
     private var childContainer: LinearLayout? = null
 
+    private var isHorizontal = false
+
     init {
         val typedArray: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.PerfectView, defStyle, 0)
 
         val isClosable = typedArray.getBoolean(R.styleable.PerfectView_isClosable, false)
 
+        isHorizontal = typedArray.getInt(R.styleable.PerfectView_orientation, 0) == 1
+
         val inflater: LayoutInflater = getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         val layout = inflater.inflate(R.layout.perfect_view, this@PerfectView, true) as LinearLayout
 
-        childContainer = layout.findViewById(R.id.child_container)
+        val verticalChildContainer =  layout.findViewById(R.id.vertical_child_container) as LinearLayout
+        val horizontalChildContainer =  layout.findViewById(R.id.horizontal_child_container) as LinearLayout
+        val horizontalContainer =  layout.findViewById(R.id.horizontal_container) as View
+        if (isHorizontal) {
+            childContainer = horizontalChildContainer
+            verticalChildContainer.isVisible = false
+        } else {
+            childContainer = verticalChildContainer
+            horizontalContainer.isVisible = false
+        }
 
         val background = layout.findViewById(R.id.content) as LinearLayout
-        //region background
-        val isLight = typedArray.getBoolean(R.styleable.PerfectView_isLight, true) || isClosable
-        if (isLight) {
-            background.background = context.getDrawable(R.drawable.light_bg)
-            background.elevation = 8F
-        } else {
-            background.background = context.getDrawable(R.drawable.dark_bg)
-        }
-        //endregion
 
         //region cross
         val crossContainer = layout.findViewById(R.id.cross_container) as View
@@ -111,11 +117,20 @@ class PerfectView @JvmOverloads constructor(
             additionalButton.isVisible = true
             additionalButton.setText(additionalButtonText)
         } else {
-//            subHeaderView.isVisible = true
-//            icon.isVisible = true
-//            crossContainer.isVisible = isClosable
             additionalButton.isVisible = false
         }
+
+        //region light
+        val isLight = typedArray.getBoolean(R.styleable.PerfectView_isLight, true) || isClosable
+        if (isLight) {
+            background.background = context.getDrawable(R.drawable.light_bg)
+            background.elevation = 8F
+            subHeaderView.setTextColor(Color.parseColor("#9299A2"))
+        } else {
+            background.background = context.getDrawable(R.drawable.dark_bg)
+            subHeaderView.setTextColor(Color.parseColor("#333333"))
+        }
+        //endregion
 
         //end region
 
@@ -131,9 +146,26 @@ class PerfectView @JvmOverloads constructor(
     }
 
     private fun processChild(perfectView: PerfectView) {
+      if (isHorizontal) {
+          processHorizontalChild(perfectView)
+      } else {
+          processVerticalChild(perfectView)
+      }
+    }
+
+    private fun processHorizontalChild(perfectView: PerfectView) {
         val content = perfectView.findViewById<LinearLayout>(R.id.content)
-        content.setPadding(10,10 ,0 ,0)
+        content.setPadding(10, 10, 0, 0)
         content.background = null
+        content.elevation = 0F
+    }
+
+    private fun processVerticalChild(perfectView: PerfectView) {
+        val content = perfectView.findViewById<LinearLayout>(R.id.content)
+        content.setPadding(10, 10, 12, 0)
+        val measure = 140.toPx(context)
+        perfectView.layoutParams = LayoutParams(measure, measure)
+
         content.elevation = 0F
     }
 

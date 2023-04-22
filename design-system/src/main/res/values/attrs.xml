@@ -25,6 +25,11 @@
             <enum name="left" value="1" />
         </attr>
 
+        <attr name="orientation">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+        </attr>
+
         <attr name="headerText" format="string"/>
         <attr name="subHeaderText" format="string"/>
         <attr name="buttonText" format="string"/>

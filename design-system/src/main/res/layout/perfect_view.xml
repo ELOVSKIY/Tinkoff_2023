@@ -83,19 +83,35 @@
                 android:id="@+id/additional_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Additional button"
-                android:layout_marginRight="20dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="#428BF9" />
+                android:layout_marginRight="20dp"
+                android:textColor="#428BF9"
+                tools:text="Additional button" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/child_container"
+            android:id="@+id/vertical_child_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:orientation="vertical" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/horizontal_child_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
 
         <Button
             android:id="@+id/main_button"
@@ -103,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/button_bg"
+            android:background="@drawable/button_selector"
             android:textAllCaps="false"
             android:textColor="#428BF9"
             android:textFontWeight="400"
