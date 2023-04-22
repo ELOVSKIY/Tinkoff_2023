@@ -3,10 +3,10 @@ package com.helicoptera.design.view
 import android.R.layout
 import android.content.Context
 import android.content.res.TypedArray
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -21,13 +21,7 @@ class PerfectView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : LinearLayout(context, attrs, defStyle) {
 
-
-    private var iconDrawable: Drawable? = null
-
-//    private var isClosable: Boolean = false
-
-//    private var headerView: TextView? = null
-//    private var subHeaderView: TextView? = null
+    private var childContainer: LinearLayout? = null
 
     init {
         val typedArray: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.PerfectView, defStyle, 0)
@@ -38,15 +32,17 @@ class PerfectView @JvmOverloads constructor(
 
         val layout = inflater.inflate(R.layout.perfect_view, this@PerfectView, true) as LinearLayout
 
+        childContainer = layout.findViewById(R.id.child_container)
+
         val background = layout.findViewById(R.id.content) as LinearLayout
         //region background
-            val isLight = typedArray.getBoolean(R.styleable.PerfectView_isLight, true) || isClosable
-            if (isLight) {
-                background.background = context.getDrawable(R.drawable.light_bg)
-                background.elevation = 8F
-            } else {
-                background.background = context.getDrawable(R.drawable.dark_bg)
-            }
+        val isLight = typedArray.getBoolean(R.styleable.PerfectView_isLight, true) || isClosable
+        if (isLight) {
+            background.background = context.getDrawable(R.drawable.light_bg)
+            background.elevation = 8F
+        } else {
+            background.background = context.getDrawable(R.drawable.dark_bg)
+        }
         //endregion
 
         //region cross
@@ -93,7 +89,7 @@ class PerfectView @JvmOverloads constructor(
 
         //region mainButton
         val buttonText = typedArray.getString(R.styleable.PerfectView_buttonText)
-        val mainButton =layout.findViewById(R.id.main_button) as Button
+        val mainButton = layout.findViewById(R.id.main_button) as Button
 
         if (!buttonText.isNullOrBlank()) {
             mainButton.isVisible = true
@@ -107,7 +103,54 @@ class PerfectView @JvmOverloads constructor(
         typedArray.recycle()
     }
 
-    companion object {
+    override fun addView(child: View?) {
+        if (child is PerfectView) {
+            childContainer?.addView(child)
+        } else if (child != null) {
+            super.addView(child)
+        }
+    }
 
+    private fun processChild(perfectView: PerfectView) {
+        val content = perfectView.findViewById<LinearLayout>(R.id.content)
+        content.setPadding(10,10 ,0 ,0)
+        content.background = null
+        content.elevation = 0F
+    }
+
+    override fun addView(child: View?, index: Int) {
+        if (child is PerfectView) {
+            processChild(child)
+            childContainer?.addView(child, index)
+        } else if (child != null) {
+            super.addView(child, index)
+        }
+    }
+
+    override fun addView(child: View?, width: Int, height: Int) {
+        if (child is PerfectView) {
+            processChild(child)
+            childContainer?.addView(child, width, height)
+        } else if (child != null) {
+            super.addView(child, width, height)
+        }
+    }
+
+    override fun addView(child: View?, params: ViewGroup.LayoutParams?) {
+        if (child is PerfectView) {
+            processChild(child)
+            childContainer?.addView(child, params)
+        } else if (child != null) {
+            super.addView(child, params)
+        }
+    }
+
+    override fun addView(child: View?, index: Int, params: ViewGroup.LayoutParams?) {
+        if (child is PerfectView) {
+            processChild(child)
+            childContainer?.addView(child, index, params)
+        } else if (child != null) {
+            super.addView(child, index, params)
+        }
     }
 }

@@ -25,11 +25,12 @@
             <enum name="left" value="1" />
         </attr>
 
-        <attr name="headerText" format="string|reference"/>
-        <attr name="subHeaderText" format="string|reference"/>
-        <attr name="buttonText" format="string|reference"/>
-        <attr name="headerTextAppearance" format="reference" />
-        <attr name="subHeaderTextAppearance" format="reference" />
+        <attr name="headerText" format="string"/>
+        <attr name="subHeaderText" format="string"/>
+        <attr name="buttonText" format="string"/>
+        <!-- If view has additional button, view hide icon -->
+        <attr name="additionalButtonText" format="string"/>
+
         <attr name="iconSrc" format="reference" />
         <!-- Closable -> iconPosition - always left -->
         <attr name="isClosable" format="boolean" />

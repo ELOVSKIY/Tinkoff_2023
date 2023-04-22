@@ -92,6 +92,179 @@
             app:iconPosition="right"
             app:isClosable="false" />
 
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:headerText="Header"
+            app:isLight="false"
+            app:buttonText="Button text"
+            app:subHeaderText="SubHeader"
+            android:clipToPadding="false"
+            app:iconPosition="right"
+            app:isClosable="false">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:headerText="Header"
+            app:isLight="true"
+            app:buttonText="Button text"
+            app:subHeaderText="SubHeader"
+            android:clipToPadding="false"
+            app:iconPosition="right"
+            app:isClosable="false">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="true"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="true"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="true"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="true"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:headerText="Header"
+            app:isLight="false"
+            app:subHeaderText="SubHeader"
+            android:clipToPadding="false"
+            app:iconPosition="right"
+            app:isClosable="false">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+                app:headerText="Header"
+                app:subHeaderText="SubHeader"
+                android:clipToPadding="false"
+                app:isLight="false"
+                app:iconPosition="left"
+                app:isClosable="false" />
+
+        </com.helicoptera.design.view.PerfectView>
+
 
     </LinearLayout>
 
