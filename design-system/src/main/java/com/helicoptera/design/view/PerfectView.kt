@@ -159,17 +159,27 @@ class PerfectView @JvmOverloads constructor(
         content.setPadding(10, 10, 12, 0)
         content.elevation = 0F
         val measure = 140.toPx(context)
+        val padding = 12.toPx(context)
         content.layoutParams = LayoutParams(measure, measure)
         content.requestLayout()
 
-
         val iconTextContainer = perfectView.findViewById<LinearLayout>(R.id.icon_text_container)
         iconTextContainer.orientation = VERTICAL
+        iconTextContainer.setPadding(padding, padding, padding, padding)
+
+        val textContainer = perfectView.findViewById<LinearLayout>(R.id.text_container)
+        textContainer.layoutParams = LayoutParams(measure, ViewGroup.LayoutParams.WRAP_CONTENT)
+
+        //to reset margins
+        val icon = perfectView.findViewById<ImageView>(R.id.icon)
+        val iconLayoutParams = icon.layoutParams
+        icon.layoutParams = LayoutParams(iconLayoutParams.width, iconLayoutParams.height)
     }
 
     private fun processVerticalChild(perfectView: PerfectView) {
         val content = perfectView.findViewById<LinearLayout>(R.id.content)
-        content.setPadding(10, 10, 0, 0)
+        val padding = 10.toPx(context)
+        content.setPadding(padding, padding, 0, 0)
         content.background = null
         content.elevation = 0F
     }

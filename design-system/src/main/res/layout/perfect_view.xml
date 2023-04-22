@@ -23,6 +23,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/text_container"
                 android:layout_width="0dp"
                 android:layout_height="56sp"
                 android:layout_weight="1"
