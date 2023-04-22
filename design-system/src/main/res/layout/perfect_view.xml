@@ -2,72 +2,97 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minWidth="180dp"
-    android:orientation="vertical"
-    android:paddingHorizontal="20dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="20dp">
+    android:padding="4dp"
+    android:clipToPadding="false"
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/icon_text_container"
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:minWidth="180dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="56sp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:minHeight="100dp"
-            android:orientation="vertical">
+            android:id="@+id/icon_text_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="#333333"
-                android:textFontWeight="700"
-                android:textSize="20sp"
-                tools:text="Header" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="56sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:minHeight="100dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/sub_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="#9299A2"
-                android:textFontWeight="4000"
-                tools:text="SubHeader" />
+                <TextView
+                    android:id="@+id/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#333333"
+                    android:textFontWeight="700"
+                    android:textSize="20sp"
+                    tools:text="Header" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/sub_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#9299A2"
+                    android:textFontWeight="4000"
+                    tools:text="SubHeader" />
 
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:src="@drawable/default_icon" />
-
-        <LinearLayout
-            android:id="@+id/cross_container"
-            android:layout_width="16dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            </LinearLayout>
 
             <ImageView
-                android:id="@+id/cross"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_cross" />
+                android:id="@+id/icon"
+                android:layout_marginRight="16dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/default_icon" />
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
+            <LinearLayout
+                android:id="@+id/cross_container"
+                android:layout_width="24dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/cross"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_cross" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
         </LinearLayout>
+        
+        <Button
+            android:id="@+id/main_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:text="Button"
+            android:textColor="#428BF9"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textFontWeight="400"
+            android:background="@drawable/button_bg"
+            android:layout_marginEnd="20dp"/>
 
     </LinearLayout>
 

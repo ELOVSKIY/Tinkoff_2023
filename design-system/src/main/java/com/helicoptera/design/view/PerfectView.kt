@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -37,15 +38,14 @@ class PerfectView @JvmOverloads constructor(
 
         val layout = inflater.inflate(R.layout.perfect_view, this@PerfectView, true) as LinearLayout
 
+        val background = layout.findViewById(R.id.content) as LinearLayout
         //region background
-            val isLight = typedArray.getBoolean(R.styleable.PerfectView_isLight, true)
+            val isLight = typedArray.getBoolean(R.styleable.PerfectView_isLight, true) || isClosable
             if (isLight) {
-                layout.background = context.getDrawable(R.drawable.light_bg)
-                layout.clipToPadding = false
-                layout.clipToOutline = false
-                layout.elevation = 8F
+                background.background = context.getDrawable(R.drawable.light_bg)
+                background.elevation = 8F
             } else {
-                layout.background = context.getDrawable(R.drawable.dark_bg)
+                background.background = context.getDrawable(R.drawable.dark_bg)
             }
         //endregion
 
@@ -72,10 +72,10 @@ class PerfectView @JvmOverloads constructor(
 
         //region icon
 
-        val iconPosition = if (typedArray.getInt(R.styleable.PerfectView_iconPosition, 0) == 0 || isClosable) {
-            IconPosition.RIGHT
-        } else {
+        val iconPosition = if (typedArray.getInt(R.styleable.PerfectView_iconPosition, 0) == 1 || isClosable) {
             IconPosition.LEFT
+        } else {
+            IconPosition.RIGHT
         }
 
         val iconDrawable =
@@ -90,6 +90,19 @@ class PerfectView @JvmOverloads constructor(
         }
 
         //endregion
+
+        //region mainButton
+        val buttonText = typedArray.getString(R.styleable.PerfectView_buttonText)
+        val mainButton =layout.findViewById(R.id.main_button) as Button
+
+        if (!buttonText.isNullOrBlank()) {
+            mainButton.isVisible = true
+            mainButton.setText(buttonText)
+        } else {
+            mainButton.isVisible = false
+        }
+
+        //end region
 
         typedArray.recycle()
     }

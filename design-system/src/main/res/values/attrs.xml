@@ -27,10 +27,10 @@
 
         <attr name="headerText" format="string|reference"/>
         <attr name="subHeaderText" format="string|reference"/>
+        <attr name="buttonText" format="string|reference"/>
         <attr name="headerTextAppearance" format="reference" />
         <attr name="subHeaderTextAppearance" format="reference" />
         <attr name="iconSrc" format="reference" />
-        <attr name="buttonEnabled" format="boolean" />
         <!-- Closable -> iconPosition - always left -->
         <attr name="isClosable" format="boolean" />
         <!-- Closable -> iconPosition - always left -->
