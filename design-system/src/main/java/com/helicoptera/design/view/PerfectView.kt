@@ -38,9 +38,9 @@ class PerfectView @JvmOverloads constructor(
 
         val layout = inflater.inflate(R.layout.perfect_view, this@PerfectView, true) as LinearLayout
 
-        val verticalChildContainer =  layout.findViewById(R.id.vertical_child_container) as LinearLayout
-        val horizontalChildContainer =  layout.findViewById(R.id.horizontal_child_container) as LinearLayout
-        val horizontalContainer =  layout.findViewById(R.id.horizontal_container) as View
+        val verticalChildContainer = layout.findViewById(R.id.vertical_child_container) as LinearLayout
+        val horizontalChildContainer = layout.findViewById(R.id.horizontal_child_container) as LinearLayout
+        val horizontalContainer = layout.findViewById(R.id.horizontal_container) as View
         if (isHorizontal) {
             childContainer = horizontalChildContainer
             verticalChildContainer.isVisible = false
@@ -146,26 +146,31 @@ class PerfectView @JvmOverloads constructor(
     }
 
     private fun processChild(perfectView: PerfectView) {
-      if (isHorizontal) {
-          processHorizontalChild(perfectView)
-      } else {
-          processVerticalChild(perfectView)
-      }
+        if (isHorizontal) {
+            processHorizontalChild(perfectView)
+            requestLayout()
+        } else {
+            processVerticalChild(perfectView)
+        }
     }
 
     private fun processHorizontalChild(perfectView: PerfectView) {
         val content = perfectView.findViewById<LinearLayout>(R.id.content)
-        content.setPadding(10, 10, 0, 0)
-        content.background = null
+        content.setPadding(10, 10, 12, 0)
         content.elevation = 0F
+        val measure = 140.toPx(context)
+        content.layoutParams = LayoutParams(measure, measure)
+        content.requestLayout()
+
+
+        val iconTextContainer = perfectView.findViewById<LinearLayout>(R.id.icon_text_container)
+        iconTextContainer.orientation = VERTICAL
     }
 
     private fun processVerticalChild(perfectView: PerfectView) {
         val content = perfectView.findViewById<LinearLayout>(R.id.content)
-        content.setPadding(10, 10, 12, 0)
-        val measure = 140.toPx(context)
-        perfectView.layoutParams = LayoutParams(measure, measure)
-
+        content.setPadding(10, 10, 0, 0)
+        content.background = null
         content.elevation = 0F
     }
 

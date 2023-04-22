@@ -13,21 +13,358 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-
 
         <com.helicoptera.design.view.PerfectView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
-            app:orientation="horizontal"
+            app:headerText="Custom Icon"
+            app:iconPosition="right"
+            app:iconSrc="@drawable/ic_launcher_background"
+            app:isClosable="false" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:headerText="Ligt"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:subHeaderText="SubHeader" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:headerText="Dark"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="false"
+            app:subHeaderText="SubHeader" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:headerText="Left Icon"
+            app:iconPosition="left"
+            app:isClosable="false"
+            app:isLight="false"
+            app:subHeaderText="SubHeader" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:headerText="Closable"
+            app:iconPosition="right"
+            app:isClosable="true"
+            app:isLight="false"
+            app:subHeaderText="SubHeader" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:buttonText="Button"
+            app:headerText="Main Button"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="true"
+            app:subHeaderText="SubHeader" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:buttonText="Button"
+            app:headerText="Main Button + Dark"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="false"
+            app:subHeaderText="SubHeader" />
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:buttonText="Button"
+            app:headerText="List + Main Button + Dark"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="false"
+            app:subHeaderText="SubHeader">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="List + Main Button"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:buttonText="Button"
+            app:headerText="Header"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="true"
+            app:subHeaderText="SubHeader">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="true"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="true"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="true"
+                app:subHeaderText="SubHeader" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:headerText="List + Main Button"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="false"
+            app:subHeaderText="SubHeader">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:additionalButtonText="Additional Button"
+            app:buttonText="Button"
+            app:headerText="List + Dark"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="false"
+            app:subHeaderText="SubHeader">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:additionalButtonText="Additional Button"
+            app:buttonText="Button"
+            app:headerText="Both Buttons"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="true"
+            app:subHeaderText="SubHeader">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:additionalButtonText="Additional Button"
+            app:headerText="Additional Button"
+            app:iconPosition="right"
+            app:isClosable="false"
+            app:isLight="true"
+            app:subHeaderText="SubHeader">
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+            <com.helicoptera.design.view.PerfectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clipToPadding="false"
+                app:headerText="Header"
+                app:iconPosition="left"
+                app:isClosable="false"
+                app:isLight="false"
+                app:subHeaderText="SubHeader" />
+
+        </com.helicoptera.design.view.PerfectView>
+
+        <com.helicoptera.design.view.PerfectView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
             app:additionalButtonText="Additional Button"
             app:buttonText="Button"
             app:headerText="Horizontal Sample"
             app:iconPosition="right"
             app:isClosable="false"
             app:isLight="true"
+            app:orientation="horizontal"
             app:subHeaderText="SubHeader">
 
             <com.helicoptera.design.view.PerfectView

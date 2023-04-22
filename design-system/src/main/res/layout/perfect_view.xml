@@ -10,7 +10,7 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="180dp"
+        android:minWidth="140dp"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingTop="16dp"
@@ -48,7 +48,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/roboto_family"
                     android:textColor="#9299A2"
-                    android:textFontWeight="4000"
+                    android:textFontWeight="400"
                     tools:text="SubHeader" />
 
             </LinearLayout>
@@ -90,7 +90,8 @@
                 android:fontFamily="@font/roboto_family"
                 android:textColor="#428BF9"
                 android:textFontWeight="500"
-                tools:text="Additional button" />
+                tools:text="Additional button"
+                tools:targetApi="p" />
 
         </LinearLayout>
 
